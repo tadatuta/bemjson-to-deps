@@ -1,0 +1,26 @@
+{
+  "name": "bemjson-to-deps",
+  "version": "1.0.0",
+  "description": "BEMJSON to DEPS helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tadatuta/bemjson-to-deps.git"
+  },
+  "keywords": [
+    "BEM",
+    "bem",
+    "bemjson",
+    "deps",
+    "converter"
+  ],
+  "author": "Vladimir Grinenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tadatuta/bemjson-to-deps/issues"
+  },
+  "homepage": "https://github.com/tadatuta/bemjson-to-deps"
+}

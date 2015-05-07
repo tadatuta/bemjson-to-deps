@@ -4,7 +4,7 @@
   "description": "BEMJSON to DEPS helper",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/test.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/tadatuta/bemjson-to-deps/issues"
   },
-  "homepage": "https://github.com/tadatuta/bemjson-to-deps"
+  "homepage": "https://github.com/tadatuta/bemjson-to-deps",
+  "dependencies": {
+    "lodash": "^3.8.0"
+  }
 }

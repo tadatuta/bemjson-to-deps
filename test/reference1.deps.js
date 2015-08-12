@@ -21,4 +21,4 @@ module.exports = [
             'e2Ofb2'
         ]
     }
-]
+];

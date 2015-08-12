@@ -1,4 +1,5 @@
-var _ = require('lodash');
+var _ = require('lodash'),
+    stringifyObj = require('stringify-object');
 
 function getEntities(bemjson, ctx) {
     ctx = ctx || {};
@@ -14,6 +15,8 @@ function getEntities(bemjson, ctx) {
 
         return deps;
     }
+
+    if (typeof bemjson !== 'object') return;
 
     bemjson.block && (ctx.block = bemjson.block);
 
@@ -38,6 +41,8 @@ function denormalizeDeps(deps) {
     var denormalizedDeps = [];
 
     deps.forEach(function(item) {
+        if (typeof item !== 'object') return;
+
         var blockIdx = findIndexByName(denormalizedDeps, 'block', item.block);
         if (blockIdx < 0) return denormalizedDeps.push(item);
 
@@ -128,7 +133,20 @@ function mergeMods(modsInto, modsToMerge) {
     });
 }
 
+function convert(bemjson, ctx) {
+    return denormalizeDeps(getEntities(bemjson, ctx));
+}
+
+function stringify(bemjson, ctx, opts) {
+    opts || (opts = {});
+    opts.indent || (opts.indent = '    ');
+
+    return stringifyObj(convert(bemjson, ctx), opts);
+}
+
 module.exports = {
     getEntities: getEntities,
-    denormalizeDeps: denormalizeDeps
+    denormalizeDeps: denormalizeDeps,
+    convert: convert,
+    stringify: stringify
 };

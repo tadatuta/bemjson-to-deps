@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/tadatuta/bemjson-to-deps",
   "dependencies": {
-    "lodash": "^3.10.0"
+    "lodash": "^3.10.0",
+    "stringify-object": "^2.3.0"
   }
 }

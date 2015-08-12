@@ -21,4 +21,4 @@ module.exports = {
             mods: { m2: true }
         }
     ]
-}
+};
